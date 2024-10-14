@@ -1,0 +1,193 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #44ad85;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.header .logo {
+    font-size: 2rem;
+}
+
+.header .navbar a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+}
+
+.header .navbar a:hover {
+    text-decoration: underline;
+}
+
+#menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section Styles */
+.hero {
+    background: url('background-image.jpg') no-repeat center/cover;
+    text-align: center;
+    padding: 5rem 0;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #44ad85;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #398c6e;
+}
+
+/* About Section Styles */
+.about {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about .heading-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+/* Courses Section Styles */
+.courses {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.courses .heading-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.courses .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.courses .box {
+    flex: 1 1 calc(50% - 20px);
+    border: 1px solid #eee;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.courses .box:hover {
+    transform: scale(1.05);
+}
+
+.courses h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.courses p {
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+/* Registration Section Styles */
+.registration {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.registration .heading-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+/* Contact Section Styles */
+.contact {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact .heading-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #44ad85;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer .box-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .box {
+    flex: 1;
+    padding: 1rem;
+}
+
+.footer h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 1rem 0;
+}

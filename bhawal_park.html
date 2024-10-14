@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhawal National Park Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+        :root{
+           --main-color:#44ad85;
+           --black:#222;
+           --white:#fff;
+           --light-black:#777;
+           --light-white: #fff9;
+           --dark-bg:rgba(0,0,0,.7);
+           --light-bg:#eee;
+           --border:.1rem solid var(--black);
+           --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+           --text-shadow:0 1.5rem 3rem rgba(0,0,0,.3);
+           --transition: all 0.3s ease;
+        }
+
+        *{
+           font-family: 'Poppins',sans-serif;
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           outline: none;
+           border: none;
+           text-decoration: none;
+           text-transform: capitalize;
+        }
+
+        html{
+           font-size:62.5%;
+           overflow-x:hidden;
+        }
+
+        body {
+           background-color: #f9f9f9;
+           overflow-x: hidden;
+        }
+
+        section {
+          padding: 5rem 10%;
+        }
+
+        .heading{
+            background-size: cover !important;
+            background-position: center !important;
+            padding-top: 10rem;
+            padding-bottom: 15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .heading h1{
+            font-size: 7rem;
+            text-transform: uppercase;
+            color: var(--white);
+            text-shadow: var(--text-shadow);
+        }
+
+        .header{
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--white);
+            display: flex;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+         }
+
+        .header .logo{
+            font-size: 2.5rem;
+            color: var(--black);
+            font-weight: bold;
+        }
+
+        .header .navbar a{
+            font-size: 2rem;
+            margin-left: 2rem;
+            color:var(--black);
+        }
+
+        .header .navbar a:hover {
+            color:var(--main-color);
+        }
+
+        #menu-btn{
+            font-size: 2.5rem;
+            cursor: pointer;
+            color:var(--black);
+            display: none;
+        }
+
+        /* Package Details Section */
+        .package-details {
+            padding: 60px 10%;
+            background-color: var(--white);
+            margin: 40px auto;
+            box-shadow: var(--box-shadow);
+            border-radius: 10px;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .package-details .content {
+            text-align: center;
+            position: relative;
+        }
+
+        .package-details h2 {
+            font-size: 42px;
+            color: var(--black);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .package-details p {
+            font-size: 18px;
+            color: var(--light-black);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .package-details h3 {
+            font-size: 26px;
+            color: var(--main-color);
+            margin-bottom: 20px;
+        }
+
+        .package-details ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .package-details ul li {
+            padding: 12px 0;
+            font-size: 18px;
+            color: var(--black);
+            border-bottom: 1px solid var(--light-black);
+        }
+
+        .package-details ul li b {
+            color: var(--main-color);
+        }
+
+        .package-details .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--main-color);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .package-details .btn:hover {
+            background-color: var(--black);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer Section */
+        .footer {
+            background: url('footer.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 0;
+            color: var(--white);
+        }
+
+        .footer .box-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            gap: 3rem;
+        }
+
+        .footer .box h3 {
+            font-size: 2.5rem;
+            padding-bottom: 2rem;
+        }
+
+        .footer .box a {
+            font-size: 1.5rem;
+            padding-bottom: 1.5rem;
+            display: block;
+            color: var(--light-white);
+            transition: var(--transition);
+        }
+
+        .footer .box a:hover i {
+            padding-right: 2rem;
+        }
+
+        .footer .credit {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 2rem;
+        }
+
+        .footer .credit span {
+            color: var(--main-color); 
+        }
+
+        .active {
+            color: var(--main-color) !important;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .footer .box {
+                flex-basis: 100%;
+            }
+
+            .package-details {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="header">
+        <a href="home.html" class="logo"><b>Pip Pip Go</b></a>
+        <nav class="navbar">
+            <a href="home.html">home</a>
+            <a href="about.html">about</a>
+            <a href="package.html">package</a>
+            <a href="book.html">book</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+
+    <!-- Hero Section -->
+    <div class="heading" style="background: url('bhawal_national_park.jpg') no-repeat;">
+        <h1>Bhawal National Park Tour</h1>
+    </div>
+
+    <!-- Package Details Section -->
+    <section class="package-details">
+        <div class="content">
+            <h2>Explore the Beauty of Bhawal National Park</h2>
+            <p>Join us for an unforgettable one-day trip from Dhaka to Bhawal National Park. Known for its lush greenery and diverse wildlife, this park offers a perfect escape for nature enthusiasts and adventure seekers.</p>
+            
+            <h3>Package Highlights:</h3>
+            <ul>
+                <li>Guided nature walks through the scenic park</li>
+                <li>Spot a variety of wildlife including deer, monkeys, and exotic birds</li>
+                <li>Explore beautiful lakes and picnic spots</li>
+                <li>Visit the park's visitor center for educational insights</li>
+                <li>Enjoy a picnic lunch surrounded by nature</li>
+            </ul>
+
+            <h3>Package Details:</h3>
+            <ul>
+                <li><b>Duration:</b> 1 Day (7:00 AM - 6:00 PM)</li>
+                <li><b>Price:</b> 2000 BDT per person</li>
+                <li><b>Includes:</b> Transportation from Dhaka, entry tickets, guided tour, lunch, and refreshments</li>
+            </ul>
+
+            <h3>Itinerary:</h3>
+            <ul>
+                <li><b>7:00 AM:</b> Departure from Dhaka</li>
+                <li><b>9:00 AM:</b> Arrival at Bhawal National Park</li>
+                <li><b>10:00 AM:</b> Start of guided nature walk</li>
+                <li><b>1:00 PM:</b> Picnic lunch in the park</li>
+                <li><b>2:30 PM:</b> Visit the visitor center and explore the park</li>
+                <li><b>4:30 PM:</b> Free time to relax or explore further</li>
+                <li><b>5:00 PM:</b> Departure from Bhawal National Park</li>
+                <li><b>6:00 PM:</b> Return to Dhaka</li>
+            </ul>
+
+            <a href="book.html" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="home.php"><i class="fas fa-angle-right"></i>home</a>
+                <a href="about.php"><i class="fas fa-angle-right"></i>about</a>
+                <a href="package.php"><i class="fas fa-angle-right"></i>package</a>
+                <a href="book.php"><i class="fas fa-angle-right"></i>book</a>
+            </div>
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#"><i class="fas fa-angle-right"></i>ask questions</a>
+                <a href="#"><i class="fas fa-angle-right"></i>about us</a>
+                <a href="#"><i class="fas fa-angle-right"></i>privacy policy</a>
+                <a href="#"><i class="fas fa-angle-right"></i>terms of use</a>
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"><i class="fas fa-phone"></i>+88014-0331-4467</a>
+                <a href="#"><i class="fas fa-phone"></i>+88017-6523-3432</a>
+                <a href="#"><i class="fas fa-envelope"></i>hossainshakhawat444@gmail.com</a>
+                <a href="#"><i class="fas fa-map"></i>Dhaka,Bangladesh-6000</a>
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+                <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+                <a href="#"><i class="fab fa-linkedin"></i> linkedin</a>
+            </div>
+        </div>
+
+        <div class="credit"> created by <span>Pip Pip Go</span> | all rights reserved!</div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
